@@ -41,15 +41,14 @@ class SignUpPage extends StatelessWidget {
                   keyboardAppearance: Brightness.light,
                   controller: namecontroller,
                   decoration: InputDecoration(
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is focused
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is not focused
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
+                      ),
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
                       hintStyle: StyleText.getRegularStyle(
                           color: Colors.grey, fontSize: height * 0.02),
@@ -70,15 +69,14 @@ class SignUpPage extends StatelessWidget {
                   keyboardAppearance: Brightness.light,
                   controller: emailcontroller,
                   decoration: InputDecoration(
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is focused
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is not focused
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
+                      ),
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
                       hintStyle: StyleText.getRegularStyle(
                           color: Colors.grey, fontSize: height * 0.02),
@@ -98,15 +96,14 @@ class SignUpPage extends StatelessWidget {
                 child: TextField(
                   controller: passwordcontroller,
                   decoration: InputDecoration(
-                      focusedBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is focused
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
-                      enabledBorder: const UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .grey), // Color of the underline when the TextField is not focused
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
+                      ),
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.bluecolor),
                       ),
                       hintStyle: StyleText.getRegularStyle(
                           color: Colors.grey, fontSize: height * 0.02),
@@ -210,7 +207,9 @@ class SignUpPage extends StatelessWidget {
                       height: height * 0.06,
                       width: width * 0.9,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.offAll(() => const SignInPage());
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.buttonColor,
                           shape: const RoundedRectangleBorder(

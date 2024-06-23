@@ -1,6 +1,6 @@
 import 'package:crime_heat/constant/constant.dart';
 import 'package:crime_heat/views/authentication/sigin.dart';
-import 'package:crime_heat/views/homepage.dart';
+import 'package:crime_heat/views/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

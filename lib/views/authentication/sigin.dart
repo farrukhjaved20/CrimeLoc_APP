@@ -1,6 +1,7 @@
 import 'package:crime_heat/constant/constant.dart';
 import 'package:crime_heat/constant/fonts.dart';
 import 'package:crime_heat/views/authentication/signup.dart';
+import 'package:crime_heat/views/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -96,6 +97,11 @@ class SignInPage extends StatelessWidget {
                     borderSide: BorderSide(color: AppColors.bluecolor),
                   ),
                   labelText: "Password",
+                  hintText: 'enter your password',
+                  hintStyle: StyleText.getRegularStyle(
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.mygreycolor,
+                  ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                   labelStyle: StyleText.getRegularStyle(
                     fontWeight: FontWeight.w700,
@@ -111,7 +117,9 @@ class SignInPage extends StatelessWidget {
                 height: height * 0.06,
                 width: width * 0.9,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.offAll(() => const MyHomePage());
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.buttonColor,
                     shape: const RoundedRectangleBorder(
