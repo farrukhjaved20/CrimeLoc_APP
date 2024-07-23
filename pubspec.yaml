@@ -36,6 +36,13 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   water_drop_nav_bar: ^2.2.1
+  intl: ^0.19.0
+  google_maps_flutter: ^2.7.0
+  google_maps_webservice: 0.0.20-nullsafety.5
+  flutter_google_places: ^0.3.0
+  location: ^5.0.0
+  uuid: ^4.4.2
+  http: 0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -75,10 +82,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Laila
+    - family: Kollektif
       fonts:
-        - asset: assets/fonts/Laila-Regular.ttf
-        - asset: assets/fonts/Laila-Medium.ttf
+        - asset: assets/fonts/Kollektif.ttf
+        - asset: assets/fonts/Kollektif-Bold.ttf
           # style: italic
     # - family: Trajan Pro
     #   fonts:

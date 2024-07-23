@@ -1,8 +1,7 @@
 import 'package:crime_heat/constant/constant.dart';
 import 'package:crime_heat/views/authentication/sigin.dart';
-import 'package:crime_heat/views/homepage/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'CrimeLoc',
+      //title: 'CrimeLoc Application',
+      defaultTransition: Transition.rightToLeft,
       theme: ThemeData(
-        fontFamily: 'Laila',
+        fontFamily: 'Kollektif',
         textSelectionTheme:
             TextSelectionThemeData(cursorColor: AppColors.bluecolor),
         elevatedButtonTheme: ElevatedButtonThemeData(

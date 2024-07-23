@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class StyleText {
-  static const String customfont1 = 'Laila';
+  static const String customfont1 = 'Kollektif';
   //static const String customfont2 = 'Quicksand';
 
   static TextStyle getRegularStyle({

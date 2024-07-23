@@ -1,7 +1,7 @@
 import 'package:crime_heat/constant/constant.dart';
-import 'package:crime_heat/views/authentication/sigin.dart';
-import 'package:crime_heat/views/authentication/signup.dart';
 import 'package:crime_heat/views/homepage/searchscreen.dart';
+import 'package:crime_heat/views/pages/profile_page.dart';
+import 'package:crime_heat/views/pages/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _bottomNavIndex = 0; //default index of a first screen
+  var _bottomNavIndex = 1; //default index of a first screen
   final Color navigationBarColor = Colors.white;
 
   late PageController pageController;
@@ -26,25 +26,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.sizeOf(context).height;
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: const SystemUiOverlayStyle(
+      value: SystemUiOverlayStyle(
+        statusBarColor: AppColors.bluecolor,
         systemNavigationBarColor: Colors.white,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: AppColors.bluecolor,
-          foregroundColor: AppColors.whitecolor,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          splashColor: AppColors.customgrey2,
-          shape: const CircleBorder(
-              side: BorderSide(
-                  width: 0,
-                  color: Colors.transparent,
-                  style: BorderStyle.none)),
-          onPressed: () {},
-          child: const Icon(Icons.add),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   backgroundColor: AppColors.bluecolor,
+        //   foregroundColor: AppColors.whitecolor,
+        //   clipBehavior: Clip.antiAliasWithSaveLayer,
+        //   splashColor: AppColors.customgrey2,
+        //   shape: const CircleBorder(
+        //       side: BorderSide(
+        //           width: 0,
+        //           color: Colors.transparent,
+        //           style: BorderStyle.none)),
+        //   onPressed: () {
+        //     Get.to(() => const AddIssue());
+        //   },
+        //   child: const Icon(Icons.add),
+        // ),
         bottomNavigationBar: WaterDropNavBar(
           backgroundColor: AppColors.whitecolor,
           waterDropColor: AppColors.bluecolor,
@@ -59,16 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
           selectedIndex: _bottomNavIndex,
           barItems: [
             BarItem(
+              filledIcon: Icons.person_2_rounded,
+              outlinedIcon: Icons.person_2_outlined,
+            ),
+            BarItem(
+              filledIcon: Icons.home_rounded,
+              outlinedIcon: Icons.home_outlined,
+            ),
+            BarItem(
               filledIcon: Icons.menu_rounded,
               outlinedIcon: Icons.menu_outlined,
-            ),
-            BarItem(
-              filledIcon: Icons.location_on_rounded,
-              outlinedIcon: Icons.location_on_outlined,
-            ),
-            BarItem(
-              filledIcon: Icons.settings_suggest_rounded,
-              outlinedIcon: Icons.settings_suggest_outlined,
             ),
           ],
         ),
@@ -76,9 +80,11 @@ class _MyHomePageState extends State<MyHomePage> {
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: [
+            const MenuPage(),
             Container(
-                margin: const EdgeInsets.only(top: 100),
-                child: const SearchScreen())
+                margin: EdgeInsets.only(top: height * 0.09),
+                child: const SearchScreen()),
+            const SettingsPage()
           ],
         ),
       ),
