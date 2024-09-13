@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "681597074319",
+    "project_id": "crimeloc-ab162",
+    "storage_bucket": "crimeloc-ab162.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681597074319:android:368df50a521dd1569f29fa",
+        "android_client_info": {
+          "package_name": "com.example.crime_heat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_5m0irh3oClni8VxEjKTEQ8f3xjo2cpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

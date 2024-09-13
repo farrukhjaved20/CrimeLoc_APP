@@ -1,10 +1,21 @@
 import 'package:crime_heat/constant/constant.dart';
-import 'package:crime_heat/views/authentication/sigin.dart';
+import 'package:crime_heat/constant/firebase_options.dart';
+import 'package:crime_heat/screens/authentication/splashScreen/splashScreen.dart';
+import 'package:crime_heat/screens/homepage/components_bottomnav/Profile/components/image.dart';
+import 'package:crime_heat/services/authenticationController.dart';
+import 'package:crime_heat/constant/size_configs.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
+  Get.lazyPut(() => AuthenticationController());
+  Get.lazyPut(() => ImageService());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,22 +23,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //title: 'CrimeLoc Application',
+      title: 'CrimeLoc Application',
       defaultTransition: Transition.rightToLeft,
-      theme: ThemeData(
-        fontFamily: 'Kollektif',
-        textSelectionTheme:
-            TextSelectionThemeData(cursorColor: AppColors.bluecolor),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(AppColors.bluecolor),
-                foregroundColor: WidgetStatePropertyAll(AppColors.whitecolor))),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const SignInPage(),
+      theme: appThemeData,
+      home: const SplashScreen(),
     );
   }
 }

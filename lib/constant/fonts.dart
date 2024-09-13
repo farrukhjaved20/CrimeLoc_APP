@@ -10,13 +10,21 @@ class StyleText {
     FontStyle fontStyle = FontStyle.normal,
     double fontSize = 16.0,
     Color color = Colors.black,
+    TextDecoration decoration = TextDecoration.none, // Added decoration
+    Color decorationColor = Colors.black, // Added decorationColor
+    TextDecorationStyle decorationStyle =
+        TextDecorationStyle.solid, // Added decorationStyle
   }) {
     return TextStyle(
-        fontFamily: fontFamily,
-        fontWeight: fontWeight,
-        fontStyle: fontStyle,
-        fontSize: fontSize,
-        color: color);
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      fontStyle: fontStyle,
+      fontSize: fontSize,
+      color: color,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationStyle: decorationStyle,
+    );
   }
 
   static TextStyle getBoldStyle({
@@ -25,6 +33,10 @@ class StyleText {
     FontStyle fontStyle = FontStyle.normal,
     double fontSize = 16.0,
     Color color = Colors.black,
+    TextDecoration decoration = TextDecoration.none, // Added decoration
+    Color decorationColor = Colors.black, // Added decorationColor
+    TextDecorationStyle decorationStyle =
+        TextDecorationStyle.solid, // Added decorationStyle
   }) {
     return TextStyle(
       fontFamily: fontFamily,
@@ -32,6 +44,9 @@ class StyleText {
       fontStyle: fontStyle,
       fontSize: fontSize,
       color: color,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationStyle: decorationStyle,
     );
   }
 }
